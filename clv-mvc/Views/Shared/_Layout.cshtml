@@ -41,9 +41,10 @@
                             </a>
                         </div>
                         <div class="nav-item">
-                            <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Visualization">
-                                <span data-feather="layers"></span>
-                                Visualization
+                            <a style="display: flex" class="nav-link" asp-area="" asp-controller="Home" asp-action="Visualization">
+                                <span style="width: 20px;" data-feather="layers"></span>
+                                <span style="flex-grow: 1;" class="d-none d-lg-block">  Visualization</span>
+                                @*try rows and columns next*@
                             </a>
                         </div>
                         <div class="nav-item">
