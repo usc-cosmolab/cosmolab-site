@@ -72,9 +72,9 @@ namespace clv_mvc.Controllers
             l.Add(EE);
             l.Add(TE);
             l.Add(BB);
-            l.Add(phiphi);
-            l.Add(TPhi);
-            l.Add(Ephi);
+            //l.Add(phiphi);
+            //l.Add(TPhi);
+            //l.Add(Ephi);
 
             var a = JsonConvert.SerializeObject(l);
 
