@@ -106,8 +106,24 @@
                 </div>
             </nav>
 
-            <main role="main" style="padding-top: 0; height: 100%;" class="col-12 col-md-11 offset-md-1 col-lg-10 offset-lg-2 px-4 main">
-                @RenderBody()
+            <main role="main" style="height: 100%;" class="col-12 col-md-11 offset-md-1 col-lg-10 offset-lg-2 px-4 main">
+                <div class="container-fluid" style="padding-right: 0;">
+                    <div class="col">
+                        <div class="row">
+                            <div class="col order-lg-2" style="width: 100%; text-align: center;">
+                                <a href="http://www.usc.edu" style="background-color: #990000; display: inline-block;" class="rounded mx-auto">
+                                    <img style="padding: 5%; max-width: 300px;" src="~/USC_logotype_white_gold.svg" class="image w-100 mx-auto" alt="USC Logo" />
+                                </a>
+                            </div>
+                            <div class="col-lg-9">
+                                <h1 id="title-el" class="text-light float-left">Welcome to the USC CosmoLab</h1>
+                            </div>
+                        </div>
+                        <div class="row">
+                            @RenderBody()
+                        </div>
+                    </div>
+                 </div>
             </main>
         </div>
 
