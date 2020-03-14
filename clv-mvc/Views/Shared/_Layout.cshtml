@@ -26,7 +26,7 @@
 <body class="bg">
     <div class="container-fluid">
         <div class="row">
-            <nav style=" background-color:#990000;" class="col-0 col-md-1 col-lg-2 d-sm-none d-md-block sidebar">
+            <nav id="thenavbar" style=" background-color:#990000;" class="col-0 col-md-1 col-lg-2 d-none d-md-block sidebar">
                 <div class="sidebar-sticky">
                     <div class="nav flex-column">
                         <button class="hamburger hamburger--collapse is-active" type="button">
@@ -41,10 +41,6 @@
                                 </div>
                                 <div style="text-align: left;" class="col-0 col-lg-9 d-none d-lg-inline-block px-0">Home</div>
                             </a>
-                            @*<a class="nav-link active" asp-area="" asp-controller="Home" asp-action="Index">
-                                <span data-feather="home"></span>
-                                Home <span class="sr-only">(current)</span>
-                            </a>*@
                         </div>
                         <div class="nav-item">
                             <a class="nav-link row" asp-area="" asp-controller="Home" asp-action="Visualization">
@@ -105,7 +101,6 @@
                     </div>
                 </div>
             </nav>
-
             <main role="main" style="height: 100%;" class="col-12 col-md-11 offset-md-1 col-lg-10 offset-lg-2 px-4 main">
                 <div class="container-fluid" style="padding-right: 0;">
                     <div class="col">
@@ -114,6 +109,13 @@
                                 <a href="http://www.usc.edu" style="background-color: #990000; display: inline-block;" class="rounded mx-auto">
                                     <img style="padding: 5%; max-width: 300px;" src="~/USC_logotype_white_gold.svg" class="image w-100 mx-auto" alt="USC Logo" />
                                 </a>
+                            </div>
+                            <div class="col-2 d-block d-md-none">
+                                <button onclick="open_hamburger()" name="hamburger-button" class="hamburger hamburger--collapse align-middle h-100" type="button">
+                                    <span class="hamburger-box d-flex justify-content-center">
+                                        <span class="hamburger-inner"></span>
+                                    </span>
+                                </button>
                             </div>
                             <div class="col-lg-9">
                                 <h1 id="title-el" class="text-light float-left">Welcome to the USC CosmoLab</h1>
@@ -141,6 +143,13 @@
     <script src="~/js/highcharts.src.js"></script>
     <script src="~/js/themes/dark-unica.js"></script>
     <script>
+
+        function open_hamburger()
+        {
+            document.getElementById("thenavbar").classList.remove('col-0');
+            document.getElementById("thenavbar").classList.remove('d-sm-none');
+            document.getElementById("thenavbar").classList.add('col-12');
+        };
 
         jQuery.ajax({
             type: "POST",
@@ -195,8 +204,6 @@
             }
         });
     </script>
-    @*<script>
-        </script>*@
     @RenderSection("Scripts", required: false)
 </body>
 </html>
