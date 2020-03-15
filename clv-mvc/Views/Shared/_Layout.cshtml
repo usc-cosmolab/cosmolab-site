@@ -29,73 +29,73 @@
             <nav id="thenavbar" style=" background-color:#990000;" class="col-0 col-md-1 col-lg-2 d-none d-md-block sidebar">
                 <div class="sidebar-sticky">
                     <div class="nav flex-column">
-                        <button class="hamburger hamburger--collapse is-active" type="button">
+                        <button onclick="hamburger()" id="hamburger_inner" class="hamburger hamburger--spin" type="button">
                             <span class="hamburger-box">
                                 <span class="hamburger-inner"></span>
                             </span>
                         </button>
                         <div class="nav-item">
                             <a class="nav-link active row" asp-area="" asp-controller="Home" asp-action="Index">
-                                <div style="text-align: center;" class="col-12 col-lg-3 d-inline-block float-left px-1">
+                                <div name="hamburger_icons" class="col-6 col-md-9 col-lg-3 d-inline-block float-left px-1 text-right">
                                     <span data-feather="home"></span>
                                 </div>
-                                <div style="text-align: left;" class="col-0 col-lg-9 d-none d-lg-inline-block px-0">Home</div>
+                                <div name="hamburger_names" class="col col-md-0 col-lg-9 d-md-none d-lg-inline-block px-0 text-left">Home</div>
                             </a>
                         </div>
                         <div class="nav-item">
                             <a class="nav-link row" asp-area="" asp-controller="Home" asp-action="Visualization">
-                                <div style="text-align: center;" class="col-12 col-lg-3 d-inline-block float-left px-1">
+                                <div name="hamburger_icons" class="col-6 col-md-9 col-lg-3 d-inline-block float-left px-1 text-right">
                                     <span data-feather="layers"></span>
                                 </div>
-                                <div style="text-align: left;" class="col-0 col-lg-9 d-none d-lg-inline-block px-0">Visualization</div>
+                                <div name="hamburger_names" class="col col-md-0 col-lg-9 d-md-none d-lg-inline-block px-0 text-left">Visualization</div>
                             </a>
                         </div>
                         <div class="nav-item">
                             <a class="nav-link row" href="research.html">
-                                <div style="text-align: center;" class="col-12 col-lg-3 d-inline-block float-left px-1">
+                                <div name="hamburger_icons" class="col-6 col-md-9 col-lg-3 d-inline-block float-left px-1 text-right">
                                     <span data-feather="file"></span>
                                 </div>
-                                <div style="text-align: left;" class="col-0 col-lg-9 d-none d-lg-inline-block px-0">Research</div>
+                                <div name="hamburger_names" class="col col-md-0 col-lg-9 d-md-none d-lg-inline-block px-0 text-left">Research</div>
                             </a>
                         </div>
                         <div class="nav-item">
                             <a class="nav-link row" href="people.html">
-                                <div style="text-align: center;" class="col-12 col-lg-3 d-inline-block float-left px-1">
+                                <div name="hamburger_icons" class="col-6 col-md-9 col-lg-3 d-inline-block float-left px-1 text-right">
                                     <span data-feather="users"></span>
                                 </div>
-                                <div style="text-align: left;" class="col-0 col-lg-9 d-none d-lg-inline-block px-0">People</div>
+                                <div name="hamburger_names" class="col col-md-0 col-lg-9 d-md-none d-lg-inline-block px-0 text-left">People</div>
                             </a>
                         </div>
                         <div class="nav-item">
                             <a class="nav-link row" href="#">
-                                <div style="text-align: center;" class="col-12 col-lg-3 d-inline-block float-left px-1">
+                                <div name="hamburger_icons" class="col-6 col-md-9 col-lg-3 d-inline-block float-left px-1 text-right">
                                     <span data-feather="book"></span>
                                 </div>
-                                <div style="text-align: left;" class="col-0 col-lg-9 d-none d-lg-inline-block px-0">Publications</div>
+                                <div name="hamburger_names" class="col col-md-0 col-lg-9 d-md-none d-lg-inline-block px-0 text-left">Publications</div>
                             </a>
                         </div>
                         <div class="nav-item">
                             <a class="nav-link row" href="#">
-                                <div style="text-align: center;" class="col-12 col-lg-3 d-inline-block float-left px-1">
+                                <div name="hamburger_icons" class="col-6 col-md-9 col-lg-3 d-inline-block float-left px-1 text-right">
                                     <span data-feather="book-open"></span>
                                 </div>
-                                <div style="text-align: left;" class="col-0 col-lg-9 d-none d-lg-inline-block px-0">News</div>
+                                <div name="hamburger_names" class="col col-md-0 col-lg-9 d-md-none d-lg-inline-block px-0 text-left">News</div>
                             </a>
                         </div>
                         <div class="nav-item">
                             <a class="nav-link row" href="#">
-                                <div style="text-align: center;" class="col-12 col-lg-3 d-inline-block float-left px-1">
+                                <div name="hamburger_icons" class="col-6 col-md-9 col-lg-3 d-inline-block float-left px-1 text-right">
                                     <span data-feather="info"></span>
                                 </div>
-                                <div style="text-align: left;" class="col-0 col-lg-9 d-none d-lg-inline-block px-0">Openings</div>
+                                <div name="hamburger_names" class="col col-md-0 col-lg-9 d-md-none d-lg-inline-block px-0 text-left">Openings</div>
                             </a>
                         </div>
                         <div class="nav-item">
                             <a class="nav-link row" href="#">
-                                <div style="text-align: center;" class="col-12 col-lg-3 d-inline-block float-left px-1">
+                                <div name="hamburger_icons" class="col-6 col-md-9 col-lg-3 d-inline-block float-left px-1 text-right">
                                     <span data-feather="message-square"></span>
                                 </div>
-                                <div style="text-align: left;" class="col-0 col-lg-9 d-none d-lg-inline-block px-0">Contact</div>
+                                <div name="hamburger_names" class="col col-md-0 col-lg-9 d-md-none d-lg-inline-block px-0 text-left">Contact</div>
                             </a>
                         </div>
                     </div>
@@ -111,7 +111,7 @@
                                 </a>
                             </div>
                             <div class="col-2 d-block d-md-none">
-                                <button onclick="open_hamburger()" name="hamburger-button" class="hamburger hamburger--collapse align-middle h-100" type="button">
+                                <button onclick="hamburger()" name="hamburger-button" class="hamburger hamburger--collapse align-middle h-100" type="button">
                                     <span class="hamburger-box d-flex justify-content-center">
                                         <span class="hamburger-inner"></span>
                                     </span>
@@ -143,12 +143,70 @@
     <script src="~/js/highcharts.src.js"></script>
     <script src="~/js/themes/dark-unica.js"></script>
     <script>
+        function getViewport() {
+            // https://stackoverflow.com/a/8876069
+            // https://stackoverflow.com/questions/45394053/how-to-detect-screen-size-or-view-port-on-bootstrap-4-with-javascript
+            const width = Math.max(
+                document.documentElement.clientWidth,
+                window.innerWidth || 0
+            )
+            if (width <= 576) return 'xs'
+            if (width <= 768) return 'sm'
+            if (width <= 992) return 'md'
+            if (width <= 1200) return 'lg'
+            return 'xl'
+        }
 
-        function open_hamburger()
-        {
+        function open_hamburger() {
             document.getElementById("thenavbar").classList.remove('col-0');
+            document.getElementById("thenavbar").classList.remove('d-none');
             document.getElementById("thenavbar").classList.remove('d-sm-none');
             document.getElementById("thenavbar").classList.add('col-12');
+
+            //var els = document.getElementsByName("hamburger_names");
+            //els.forEach(element => {
+            //    //console.log(element);
+            //});
+
+            document.getElementById("hamburger_inner").classList.add('is-active');
+            if (getViewport() == 'xs' || getViewport() == 'sm')
+                document.getElementById("hamburger_inner").classList.add('text-right');
+            else
+                document.getElementById("hamburger_inner").classList.add('text-center');
+        }
+
+        function close_hamburger() {
+            document.getElementById("thenavbar").classList.add('col-0');
+            document.getElementById("thenavbar").classList.add('d-none');
+            document.getElementById("thenavbar").classList.add('d-sm-none');
+            document.getElementById("thenavbar").classList.remove('col-12');
+
+            //var els = document.getElementsByName("hamburger_names");
+            //els.forEach(element => {
+            //    //console.log(element);
+            //});
+
+            document.getElementById("hamburger_inner").classList.remove('is-active');
+            if (getViewport() == 'xs' || getViewport() == 'sm')
+                document.getElementById("hamburger_inner").classList.remove('text-right');
+            else
+                document.getElementById("hamburger_inner").classList.remove('text-center');
+        }
+
+        function hamburger()
+        {
+            if ('hamburgerstatus' in window) {
+                if (window.hamburgerstatus == 1) {
+                    close_hamburger();
+                    window.hamburgerstatus = 0;
+                } else {
+                    open_hamburger();
+                    window.hamburgerstatus = 1;
+                }
+            } else {
+                open_hamburger();
+                window.hamburgerstatus = 1;
+            }
         };
 
         jQuery.ajax({
