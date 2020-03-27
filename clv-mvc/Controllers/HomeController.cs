@@ -26,7 +26,17 @@ namespace clv_mvc.Controllers
             return View();
         }
 
-        public IActionResult Privacy()
+        public IActionResult People()
+        {
+            return View();
+        }
+
+        public IActionResult Research()
+        {
+            return View();
+        }
+
+        public IActionResult Publications()
         {
             return View();
         }

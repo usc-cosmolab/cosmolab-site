@@ -51,7 +51,7 @@
                             </a>
                         </div>
                         <div class="nav-item">
-                            <a class="nav-link row" href="research.html">
+                            <a class="nav-link row" asp-area="" asp-controller="Home" asp-action="Research">
                                 <div name="hamburger_icons" class="col-6 col-md-9 col-lg-3 d-inline-block float-left px-1 text-right">
                                     <span data-feather="file"></span>
                                 </div>
@@ -59,7 +59,7 @@
                             </a>
                         </div>
                         <div class="nav-item">
-                            <a class="nav-link row" href="people.html">
+                            <a class="nav-link row" asp-area="" asp-controller="Home" asp-action="People">
                                 <div name="hamburger_icons" class="col-6 col-md-9 col-lg-3 d-inline-block float-left px-1 text-right">
                                     <span data-feather="users"></span>
                                 </div>
@@ -67,7 +67,7 @@
                             </a>
                         </div>
                         <div class="nav-item">
-                            <a class="nav-link row" href="#">
+                            <a class="nav-link row" asp-area="" asp-controller="Home" asp-action="Publications">
                                 <div name="hamburger_icons" class="col-6 col-md-9 col-lg-3 d-inline-block float-left px-1 text-right">
                                     <span data-feather="book"></span>
                                 </div>
@@ -121,7 +121,7 @@
                                 <h1 id="title-el" class="text-light float-left">Welcome to the USC CosmoLab</h1>
                             </div>
                         </div>
-                        <div class="row">
+                        <div class="row" style="padding-top: 20px;">
                             @RenderBody()
                         </div>
                     </div>

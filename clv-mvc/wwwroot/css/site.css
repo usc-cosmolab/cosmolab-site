@@ -140,8 +140,13 @@ body, html {
 .text-light {
     padding-top: .75rem;
     padding-bottom: .75rem;
-    background-color: rgba(0, 0, 0, .5);
-    box-shadow: inset -1px 0 0 rgba(0, 0, 0, .5);
+    background-color: rgba(0, 0, 0, .6);
+    box-shadow: inset -1px 0 0 rgba(0, 0, 0, .6);
+}
+
+.readable {
+    background-color: rgba(0, 0, 0, .8);
+    box-shadow: inset -1px 0 0 rgba(0, 0, 0, .8);
 }
 
 .rounded {
@@ -150,4 +155,10 @@ body, html {
 
 .rounded-heavy {
     border-radius: 2rem !important;
+}
+
+.custom-hyperlink {
+    color: #0A84FF;
+    font-size: 1.2rem;
+    font-weight: bold
 }
