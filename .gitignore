@@ -338,3 +338,11 @@ ASALocalRun/
 
 # BeatPulse healthcheck temp database
 healthchecksdb
+/clv-mvc/a00_cl.dat
+/clv-mvc/500_cl.dat
+/clv-mvc/400_cl.dat
+/clv-mvc/300_cl.dat
+/clv-mvc/200_cl.dat
+/clv-mvc/100_cl.dat
+/Parser/100_cl.dat
+/InputFileGenerator/a1.ini

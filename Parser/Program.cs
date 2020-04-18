@@ -12,12 +12,17 @@ namespace Parser
         {
             outputValues = new List<Output>();
 
-            FileStream fs = new FileStream("explanatory00_cl.dat", FileMode.Open);
+            FileStream fs = new FileStream("a00_cl.dat", FileMode.Open);
             using StreamReader reader = new StreamReader(fs);
+            int lines = 0;
             while (!reader.EndOfStream)
             {
+                lines++;
                 Output lineC = new Output();
-                string line = reader.ReadLine().Substring(11);
+                string line = reader.ReadLine();
+                if (line.StartsWith('#'))
+                    continue;
+                line = line.Substring(11);
                 for (int i = 0; i < 7; i++)
                 {
                     if (i != 0)
@@ -26,6 +31,8 @@ namespace Parser
                     lineC.AddNumber(i, Double.Parse(another, System.Globalization.NumberStyles.Float));
                 }
                 outputValues.Add(lineC);
+                //if (lines > 2000)
+                //    break;
             }
 
             return outputValues;

@@ -8,6 +8,9 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Update="100_cl.dat">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Update="custom02_cl.dat">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>

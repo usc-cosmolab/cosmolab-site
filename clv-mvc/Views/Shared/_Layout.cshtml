@@ -209,6 +209,14 @@
             }
         };
 
+        function updatehubble(value) {
+            document.getElementById("hubble-value").innerText = value;
+        };
+
+        function updatebaryon(value) {
+            document.getElementById("omegab-value").innerText = value;
+        };
+
         jQuery.ajax({
             type: "POST",
             url: "/Home/NewChart",
