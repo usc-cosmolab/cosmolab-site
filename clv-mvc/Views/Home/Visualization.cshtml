@@ -4,6 +4,61 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
+@section Scripts
+{
+    <script>
+        document.getElementById("chart-container").onload = loadchart();
+
+        function loadchart() {
+            var info = {
+                h: document.getElementById("h").value,
+                ob: document.getElementById("ob").value
+            };
+            console.log(info);
+            jQuery.ajax({
+                type: "POST",
+                url: "/Home/NewChart",
+                data: info,
+                dataType: "json", 
+                success: function (chData) {
+
+                    var myChart = Highcharts.chart('chart-container', {
+                        chart: {
+                            type: 'line'
+                        },
+                        title: {
+                            text: 'The CMB anisotropy spectra'
+                        },
+                        yAxis: {
+                            title: {
+                                text: 'that value'
+                            }
+                        },
+                        series: [
+                            {
+                                name: 'TT',
+                                data: chData[0]
+                            },
+                            {
+                                name: 'EE',
+                                data: chData[1]
+                            },
+                            {
+                                name: 'TE',
+                                data: chData[2]
+                            },
+                            {
+                                name: 'BB',
+                                data: chData[3]
+                            }
+                        ]
+                    });
+                }
+            });
+        };
+    </script>
+}
+
 <div class="col">
     <div id="chart-container"></div>
 </div>
@@ -12,14 +67,14 @@
         <label class="text-light" for="h">Hubble Parameter h:</label>
     </div>
     <div class="col">
-        <label id="hubble-value" class="text-light">0.7</label>
+        <label id="hubble-value" class="text-light" runat="server">0.7</label>
         <input type="range" id="h" name="h" min="0.3" max="1.5" step="0.2" value="0.6" oninput="updatehubble(value)">
     </div>
     <div class="col">
         <label class="text-light" for="ob">Baryon Density Ω<sub>b</sub>:</label>
     </div>
     <div class="col">
-        <label id="omegab-value" class="text-light">0.021</label>
+        <label id="omegab-value" class="text-light" runat="server">0.021</label>
         <input type="range" id="ob" name="ob" min="0.005" max="0.037" step="0.004" value="0.021" oninput="updatebaryon(value)">
     </div>
 

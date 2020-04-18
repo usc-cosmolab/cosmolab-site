@@ -211,64 +211,15 @@
 
         function updatehubble(value) {
             document.getElementById("hubble-value").innerText = value;
+            loadchart();
         };
 
         function updatebaryon(value) {
             document.getElementById("omegab-value").innerText = value;
+            loadchart();
         };
 
-        jQuery.ajax({
-            type: "POST",
-            url: "/Home/NewChart",
-            contentType: "application/json; charset=utf-8",
-            dataType: "json",
-            success: function (chData) {
-
-                var myChart = Highcharts.chart('chart-container', {
-                    chart: {
-                        type: 'line'
-                    },
-                    title: {
-                        text: 'The CMB anisotropy spectra'
-                    },
-                    yAxis: {
-                        title: {
-                            text: 'that value'
-                        }
-                    },
-                    series: [
-                        {
-                            name: 'TT',
-                            data: chData[0]
-                        },
-                        {
-                            name: 'EE',
-                            data: chData[1]
-                        },
-                        {
-                            name: 'TE',
-                            data: chData[2]
-                        },
-                        {
-                            name: 'BB',
-                            data: chData[3]
-                        },
-                        {
-                            name: 'phiphi',
-                            data: chData[4]
-                        },
-                        {
-                            name: 'TPhi',
-                            data: chData[5]
-                        },
-                        {
-                            name: 'EPhi',
-                            data: chData[6]
-                        }
-                    ]
-                });
-            }
-        });
+        
     </script>
     @RenderSection("Scripts", required: false)
 </body>
