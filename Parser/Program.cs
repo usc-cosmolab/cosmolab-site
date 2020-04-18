@@ -8,11 +8,15 @@ namespace Parser
     {
         static List<Output> outputValues;
 
-        public static List<Output> ProcessAndGetOutput()
+        public static List<Output> ProcessAndGetOutput(double h, double ob)
         {
+            string suffix = "00_cl.dat";
+            string filename = "h" + h.ToString("0.0") + "ob" + ob.ToString("0.000") + suffix;
+            filename = "Vis_files/" + filename;
+
             outputValues = new List<Output>();
 
-            FileStream fs = new FileStream("a00_cl.dat", FileMode.Open);
+            FileStream fs = new FileStream(filename, FileMode.Open);
             using StreamReader reader = new StreamReader(fs);
             int lines = 0;
             while (!reader.EndOfStream)

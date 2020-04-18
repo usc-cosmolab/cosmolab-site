@@ -14,6 +14,12 @@ namespace clv_mvc.Controllers
 {
     public class HomeController : Controller
     {
+        public struct inputparams
+        {
+            public double h;
+            public double ob;
+        }
+
         private readonly ILogger<HomeController> _logger;
 
         public HomeController(ILogger<HomeController> logger)
@@ -67,17 +73,15 @@ namespace clv_mvc.Controllers
         }
 
         [HttpPost]
-        public string NewChart()
+        public string NewChart(double h, double ob)
         {
             List<Output> data = new List<Output>();
 
-            data = Parser.Program.ProcessAndGetOutput();
+
+            data = Parser.Program.ProcessAndGetOutput(h, ob);
 
             List<List<double>> l = new List<List<double>>();
-            List<double> TT, EE, TE, BB, phiphi, TPhi, Ephi;
-            Ephi = new List<double>();
-            TPhi = new List<double>();
-            phiphi = new List<double>();
+            List<double> TT, EE, TE, BB;
             BB = new List<double>();
             TE = new List<double>();
             EE = new List<double>();
@@ -88,17 +92,11 @@ namespace clv_mvc.Controllers
                 EE.Add(data[i].EE);
                 TE.Add(data[i].TE);
                 BB.Add(data[i].BB);
-                phiphi.Add(data[i].phiphi);
-                TPhi.Add(data[i].TPhi);
-                Ephi.Add(data[i].Ephi);
             }
             l.Add(TT);
             l.Add(EE);
             l.Add(TE);
             l.Add(BB);
-            //l.Add(phiphi);
-            //l.Add(TPhi);
-            //l.Add(Ephi);
 
             var a = JsonConvert.SerializeObject(l);
 
