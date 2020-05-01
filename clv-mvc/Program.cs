@@ -28,7 +28,7 @@ namespace clv_mvc
                 })
                 .UseKestrel(options =>
                 {
-                    options.Listen(IPAddress.Loopback, 5001, listenOptions =>
+                    options.Listen(IPAddress.Loopback, 5010, listenOptions =>
                     {
                         var serverCertificate = LoadCertificate();
                         listenOptions.UseHttps(serverCertificate); // <- Configures SSL
