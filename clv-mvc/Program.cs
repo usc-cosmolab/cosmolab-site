@@ -56,8 +56,9 @@ namespace clv_mvc
                     certificateStream.CopyTo(memoryStream);
                     certificatePayload = memoryStream.ToArray();
                 }
-
-                return new X509Certificate2(certificatePayload, Environment.GetEnvironmentVariable("KEYPASS"));
+                var vari = Environment.GetEnvironmentVariable("KEYPASS");
+                Console.WriteLine(vari);
+                return new X509Certificate2(certificatePayload, vari);
             }
         }
 
