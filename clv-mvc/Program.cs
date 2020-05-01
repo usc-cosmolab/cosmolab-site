@@ -28,7 +28,7 @@ namespace clv_mvc
                 })
                 .UseKestrel(options =>
                 {
-                    options.Listen(IPAddress.Loopback, 5010, listenOptions =>
+                    options.Listen(IPAddress.Loopback, 443, listenOptions =>
                     {
                         var serverCertificate = LoadCertificate();
                         listenOptions.UseHttps(serverCertificate); // <- Configures SSL
@@ -57,9 +57,6 @@ namespace clv_mvc
                     certificatePayload = memoryStream.ToArray();
                 }
                 string vari = Environment.GetEnvironmentVariable("KEYPASS");
-                Console.WriteLine("The pass is");
-                Console.WriteLine(vari);
-                Console.WriteLine("right above");
                 return new X509Certificate2(certificatePayload, vari);
             }
         }
