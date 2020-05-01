@@ -33,7 +33,8 @@ namespace CosmoLabVisualization
                 name: "default",
                 template: "{controller=Home}/{action=Index}/{id?}");
             });
-
+            
+            app.useHttpsRedirection();
             app.UseRouting();
 
             app.UseDefaultFiles();
