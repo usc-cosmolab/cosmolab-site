@@ -81,8 +81,7 @@ namespace clv_mvc.Controllers
             data = Parser.Program.ProcessAndGetOutput(h, ob);
 
             List<List<double>> l = new List<List<double>>();
-            List<double> TT, EE, TE, BB;
-            BB = new List<double>();
+            List<double> TT, EE, TE;
             TE = new List<double>();
             EE = new List<double>();
             TT = new List<double>();
@@ -91,7 +90,6 @@ namespace clv_mvc.Controllers
                 TT.Add(data[i].TT);
                 EE.Add(data[i].EE);
                 TE.Add(data[i].TE);
-                BB.Add(data[i].BB);
             }
             l.Add(TT);
             l.Add(EE);
