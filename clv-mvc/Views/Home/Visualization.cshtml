@@ -7,9 +7,9 @@
 @section Scripts
 {
     <script>
-        document.getElementById("chart-container").onload = loadchart();
+        document.getElementById("chart-container").onload = loadchart(true);
 
-        function loadchart() {
+        function loadchart(animate) {
             var info = {
                 h: document.getElementById("h").value,
                 ob: document.getElementById("ob").value
@@ -21,6 +21,16 @@
                 data: info,
                 dataType: "json", 
                 success: function (chData) {
+
+                    console.log(animate);
+
+                    Highcharts.setOptions({
+                        plotOptions: {
+                            series: {
+                                animation: animate
+                            }
+                        }
+                    });
 
                     var myChart = Highcharts.chart('chart-container', {
                         chart: {
