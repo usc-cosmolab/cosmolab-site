@@ -14,15 +14,12 @@
                 h: document.getElementById("h").value,
                 ob: document.getElementById("ob").value
             };
-            console.log(info);
             jQuery.ajax({
                 type: "POST",
                 url: "/Home/NewChart",
                 data: info,
                 dataType: "json", 
                 success: function (chData) {
-
-                    console.log(animate);
 
                     Highcharts.setOptions({
                         plotOptions: {
