@@ -7,7 +7,7 @@ namespace Parser
     public class Output
     {
 
-        public double TT, EE, TE, BB, phiphi, TPhi, Ephi;
+        public double TT, EE, TE;
 
         public void AddNumber(int index, double value)
         {
@@ -21,18 +21,6 @@ namespace Parser
                     break;
                 case 2:
                     TE = value;
-                    break;
-                case 3:
-                    BB = value;
-                    break;
-                case 4:
-                    phiphi = value;
-                    break;
-                case 5:
-                    TPhi = value;
-                    break;
-                case 6:
-                    Ephi = value;
                     break;
                 default:
                     break;

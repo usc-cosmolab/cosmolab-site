@@ -35,8 +35,6 @@ namespace Parser
                     lineC.AddNumber(i, Double.Parse(another, System.Globalization.NumberStyles.Float));
                 }
                 outputValues.Add(lineC);
-                //if (lines > 2000)
-                //    break;
             }
 
             return outputValues;
