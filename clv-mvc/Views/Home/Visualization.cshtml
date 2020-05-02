@@ -30,22 +30,29 @@
                             text: 'The CMB anisotropy spectra'
                         },
                         yAxis: {
+                            type: 'logarithmic',
                             title: {
                                 text: '[l(l+1)/2π]C'
                             }
                         },
+                        xAxis: {
+                            type: 'logarithmic'
+                        },
                         series: [
                             {
                                 name: 'TT',
-                                data: chData[0]
+                                data: chData[0],
+                                pointStart: 1
                             },
                             {
                                 name: 'EE',
-                                data: chData[1]
+                                data: chData[1],
+                                pointStart: 1
                             },
                             {
                                 name: 'TE',
-                                data: chData[2]
+                                data: chData[2],
+                                pointStart: 1
                             }
                         ]
                     });
