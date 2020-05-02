@@ -11,6 +11,7 @@ namespace Parser
 
         public void AddNumber(int index, double value)
         {
+            value = Math.Abs(value);
             switch (index)
             {
                 case 0:
