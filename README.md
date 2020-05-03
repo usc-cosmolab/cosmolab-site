@@ -22,6 +22,26 @@ This time, you navigate to [clv-mcv/wwwroot/](https://github.com/usc-cosmolab/co
     <img  style="max-width: 75%;"  src="~/placeholder.png"  class="rounded-heavy img-fluid"  alt="..." />
 In this line, `src="~/placeholder.png"` defines the path to the *source* of the file relative to the wwwroot folder. So, you can upload a new image here to be used in place of the placeholder and change the path to it.
 
-I'll cover more advanced edits later on in this document.
+## Changing colors and styles
+
+This one's a bit more tricky because you may have to edit the CSS - short for Cascading Styling Sheet. This file, which you can find at [clv-mvc/wwwroot/css/site.css](https://github.com/usc-cosmolab/cosmolab-site/blob/master/clv-mvc/wwwroot/css/site.css) is meant to decouple the content from styling; however, in modern HTML, this is not always the case. You'll generally find most styling info like colors in the CSS file.
+As an example, at the time of this commit, site.css contains the following code:
+
+    .custom-hyperlink {
+	    color: #0A84FF;
+	    font-size: 1.2rem;
+	    font-weight: bold
+    }
+This code defines a style class called custom-hyperlink that can now be applied to an element on any html page. That element will then have all these properties applied to it. This class is used in Contact.cshtml like this:
+
+    <a  class="custom-hyperlink" href="mailto:abc@usc.edu">abc@usc.edu</a>
+This means that the element of type a (used for hyperlinks, don't ask why) uses the class custom-hyperlink for styling and has the hyperlink specified as href applied to it. You can try changing the color in the css using a hex code or the font weight. Note that font-size is relative to a global variable *rem*. Above, it's 1.2 times *rem*. You can experiment with it till you find a suitable factor.
+Please be warned that CSS can be a **pain** especially because different browsers implement CSS properties differently; so, something as simple as changing size may need a lot of tweaking.
+![What CSS feels like](https://2.bp.blogspot.com/-41v6n3Vaf5s/UeRN_XJ0keI/AAAAAAAAN2Y/YxIHhddGiaw/s1600/css.gif)
+Which brings us to a better solution for styling, the Bootstrap framework. This is something that this project uses and you can use predefined CSS classes from Bootstrap to make style changes rather easily. Bootstrap handles all the cross-browser stuff and fixes edges.
+
+## Using the Bootstrap framework
+
+Boostrap handles styling, responsiveness (scaling as the browser or screen size increases), and more.
 
 **More documentation is coming soon.**
