@@ -14,4 +14,14 @@ In the repo, navigate to [clv-mvc/Views/Home/](https://github.com/usc-cosmolab/c
 
 As an example, go to *Index.cshtml*. Here, the text you see enclosed within a `<p>` tag is a paragraph. Make some changes here, commit, and push. The homepage will reflect these changes shortly.
 
-More documentation is coming soon.
+
+## Adding images and other non-text content
+
+This time, you navigate to [clv-mcv/wwwroot/](https://github.com/usc-cosmolab/cosmolab-site/tree/master/clv-mvc/wwwroot) and find the files there. At the top-level, you will find the background image, placeholder image, and more. When you're referring to this content from the html or css code, the path is relative to this folder. For example, the file *People.cshtml* from the previous section has the following line in it:
+
+    <img  style="max-width: 75%;"  src="~/placeholder.png"  class="rounded-heavy img-fluid"  alt="..." />
+In this line, `src="~/placeholder.png"` defines the path to the *source* of the file relative to the wwwroot folder. So, you can upload a new image here to be used in place of the placeholder and change the path to it.
+
+I'll cover more advanced edits later on in this document.
+
+**More documentation is coming soon.**
