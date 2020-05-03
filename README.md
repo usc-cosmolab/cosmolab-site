@@ -1,6 +1,10 @@
-<!-- START doctoc generated TOC please keep comment here to allow auto update -->
-<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
-**Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
+# Welcome to the USC CosmoLab site code
+
+This repository contains the code for the cosmolab website including a visualization that runs on the backend server. It continuously integrates with the server via Team City, so any changes made here should automatically update the site at cosmolab.usc.edu within a few minutes of the push.
+
+The documentation below will show you how to dig right in to making changes to the site. Further down you'll see the high-level structure of the code as well as the relevant technologies.
+
+## Table of Contents
 
 - [Welcome to the USC CosmoLab site code](#welcome-to-the-usc-cosmolab-site-code)
 - [Making changes](#making-changes)
@@ -9,15 +13,6 @@
   - [Modifying the layout](#modifying-the-layout)
   - [Changing colors and styles](#changing-colors-and-styles)
   - [Using the Bootstrap framework](#using-the-bootstrap-framework)
-
-<!-- END doctoc generated TOC please keep comment here to allow auto update -->
-
-# Welcome to the USC CosmoLab site code
-
-This repository contains the code for the cosmolab website including a visualization that runs on the backend server. It continuously integrates with the server via Team City, so any changes made here should automatically update the site at cosmolab.usc.edu within a few minutes of the push.
-
-The documentation below will show you how to dig right in to making changes to the site. Further down you'll see the high-level structure of the code as well as the relevant technologies.
-
 
 # Making changes
 
