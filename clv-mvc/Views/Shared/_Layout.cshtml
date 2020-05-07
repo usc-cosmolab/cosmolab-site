@@ -8,7 +8,7 @@
 
     <title>@ViewData["Title"] - USC CosmoLab</title>
 
-    <link rel="canonical" href="link-to-homepage-here">
+    <link rel="canonical" href="https://cosmolab.usc.edu">
 
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 
@@ -143,6 +143,14 @@
     <script src="~/js/highcharts.src.js"></script>
     <script src="~/js/themes/dark-unica.js"></script>
     <script>
+        this.onload = setTitle();
+
+        function setTitle() {
+            var t = '@ViewData["Title"]';
+            document.title = t + ' - USC CosmoLab';
+            document.getElementById('title-el').innerText = t;
+        }
+
         function getViewport() {
             // https://stackoverflow.com/a/8876069
             // https://stackoverflow.com/questions/45394053/how-to-detect-screen-size-or-view-port-on-bootstrap-4-with-javascript
@@ -219,7 +227,7 @@
             loadchart(false);
         };
 
-        
+
     </script>
     @RenderSection("Scripts", required: false)
 </body>
