@@ -78,14 +78,14 @@
     </div>
     <div class="col">
         <label id="hubble-value" class="text-light" runat="server">0.7</label>
-        <input type="range" id="h" name="h" min="0.3" max="1.5" step="0.2" value="0.6" oninput="updatehubble(value)">
+        <input type="range" id="h" name="h" min="0.3" max="1.5" step="0.2" value="0.6" onchange="updatehubble(value)">
     </div>
     <div class="col">
         <label class="text-light" for="ob">Baryon Density Ω<sub>b</sub>:</label>
     </div>
     <div class="col">
         <label id="omegab-value" class="text-light" runat="server">0.021</label>
-        <input type="range" id="ob" name="ob" min="0.005" max="0.037" step="0.004" value="0.021" oninput="updatebaryon(value)">
+        <input type="range" id="ob" name="ob" min="0.005" max="0.037" step="0.004" value="0.021" onchange="updatebaryon(value)">
     </div>
 
 </div>
