@@ -6,7 +6,10 @@
 
 @section Scripts
 {
+    
+
     <script>
+
         document.getElementById("chart-container").onload = loadchart(true);
 
         function loadchart(animate) {
@@ -29,21 +32,31 @@
                         }
                     });
 
+                    var tit = '\u2113(\u2113+1) / (2\uD835\uDF0B) C';
+
                     var myChart = Highcharts.chart('chart-container', {
                         chart: {
                             type: 'line'
                         },
                         title: {
-                            text: 'The CMB anisotropy spectra'
+                            text: 'The CMB anisotropy spectra',
+                            style: {
+                                fontSize: '36px'
+                            }
                         },
                         yAxis: {
+                            className: 'y-prop',
                             type: 'logarithmic',
                             title: {
-                                text: '[l(l+1)/2π]C'
+                                text: tit
                             }
                         },
                         xAxis: {
-                            type: 'logarithmic'
+                            className: 'y-prop',
+                            type: 'logarithmic',
+                            title: {
+                                text: '\u2113'
+                            }
                         },
                         series: [
                             {
