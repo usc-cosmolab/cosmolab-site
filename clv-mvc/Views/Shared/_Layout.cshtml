@@ -37,7 +37,7 @@
                             </span>
                         </button>
                         <div class="nav-item">
-                            <a class="nav-link active row" asp-area="" asp-controller="Home" asp-action="Index">
+                            <a name="Index" class="nav-link active row" asp-area="" asp-controller="Home" asp-action="Index">
                                 <div name="hamburger_icons" class="col-6 col-md-9 col-lg-3 d-inline-block float-left px-1 text-right">
                                     <span data-feather="home"></span>
                                 </div>
@@ -45,7 +45,7 @@
                             </a>
                         </div>
                         <div class="nav-item">
-                            <a class="nav-link row" asp-area="" asp-controller="Home" asp-action="Visualization">
+                            <a name="Visualization" class="nav-link row" asp-area="" asp-controller="Home" asp-action="Visualization">
                                 <div name="hamburger_icons" class="col-6 col-md-9 col-lg-3 d-inline-block float-left px-1 text-right">
                                     <span data-feather="layers"></span>
                                 </div>
@@ -53,7 +53,7 @@
                             </a>
                         </div>
                         <div class="nav-item">
-                            <a class="nav-link row" asp-area="" asp-controller="Home" asp-action="Research">
+                            <a name="Research" class="nav-link row" asp-area="" asp-controller="Home" asp-action="Research">
                                 <div name="hamburger_icons" class="col-6 col-md-9 col-lg-3 d-inline-block float-left px-1 text-right">
                                     <span data-feather="file"></span>
                                 </div>
@@ -61,7 +61,7 @@
                             </a>
                         </div>
                         <div class="nav-item">
-                            <a class="nav-link row" asp-area="" asp-controller="Home" asp-action="People">
+                            <a name="People" class="nav-link row" asp-area="" asp-controller="Home" asp-action="People">
                                 <div name="hamburger_icons" class="col-6 col-md-9 col-lg-3 d-inline-block float-left px-1 text-right">
                                     <span data-feather="users"></span>
                                 </div>
@@ -69,7 +69,7 @@
                             </a>
                         </div>
                         <div class="nav-item">
-                            <a class="nav-link row" asp-area="" asp-controller="Home" asp-action="Publications">
+                            <a name="Publications" class="nav-link row" asp-area="" asp-controller="Home" asp-action="Publications">
                                 <div name="hamburger_icons" class="col-6 col-md-9 col-lg-3 d-inline-block float-left px-1 text-right">
                                     <span data-feather="book"></span>
                                 </div>
@@ -77,7 +77,7 @@
                             </a>
                         </div>
                         <div class="nav-item">
-                            <a class="nav-link row" asp-area="" asp-controller="Home" asp-action="News">
+                            <a name="News" class="nav-link row" asp-area="" asp-controller="Home" asp-action="News">
                                 <div name="hamburger_icons" class="col-6 col-md-9 col-lg-3 d-inline-block float-left px-1 text-right">
                                     <span data-feather="book-open"></span>
                                 </div>
@@ -85,7 +85,7 @@
                             </a>
                         </div>
                         <div class="nav-item">
-                            <a class="nav-link row" asp-area="" asp-controller="Home" asp-action="Openings">
+                            <a name="Openings" class="nav-link row" asp-area="" asp-controller="Home" asp-action="Openings">
                                 <div name="hamburger_icons" class="col-6 col-md-9 col-lg-3 d-inline-block float-left px-1 text-right">
                                     <span data-feather="info"></span>
                                 </div>
@@ -93,7 +93,7 @@
                             </a>
                         </div>
                         <div class="nav-item">
-                            <a class="nav-link row" asp-area="" asp-controller="Home" asp-action="Contact">
+                            <a name="Contact" class="nav-link row" asp-area="" asp-controller="Home" asp-action="Contact">
                                 <div name="hamburger_icons" class="col-6 col-md-9 col-lg-3 d-inline-block float-left px-1 text-right">
                                     <span data-feather="message-square"></span>
                                 </div>
@@ -145,12 +145,36 @@
     <script src="~/js/highcharts.src.js"></script>
     <script src="~/js/themes/dark-unica.js"></script>
     <script>
-        this.onload = setTitle();
+        this.onload = setUp();
+
+        
+
+        function setUp() {
+            setTitle();
+            setSidebar();
+        }
 
         function setTitle() {
             var t = '@ViewData["Title"]';
             document.title = t + ' - USC CosmoLab';
             document.getElementById('title-el').innerText = t;
+        }
+
+        function setSidebar() {
+            var url = window.location.pathname;
+            var myPageName = url.substring(url.lastIndexOf('/') + 1);
+            if (myPageName === '') myPageName = 'Index';
+
+            var a = document.getElementsByClassName('nav-link');
+            var i;
+            for (i = 0; i < a.length; i++) {
+                var att = a[i].getAttribute('name');
+                if (att === myPageName) {
+                    a[i].classList.add('active');
+                }
+                else
+                    a[i].classList.remove('active');
+            }
         }
 
         function getViewport() {
