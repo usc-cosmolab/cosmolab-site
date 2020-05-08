@@ -110,8 +110,17 @@
     </script>
 }
 
-<div class="col">
+<div class="col flex">
     <div id="chart-container"></div>
+    <div class="row">
+        <div class="col">
+            <label class="text-light">This visualization is made possible by the CLASS project. Check out the original paper and code.</label>
+        </div>
+        <div class="flex-column align-middle">
+            <button type="button" class="btn btn-dark mt-2" onclick="window.open('https://arxiv.org/abs/1104.2933')"><span data-feather="book"></span></button>
+            <button type="button" class="btn btn-dark mt-2" onclick="window.open('https://github.com/lesgourg/class_public')"><span data-feather="github"></span></button>
+        </div>
+    </div>
     <div id="errormessage" hidden class="alert alert-warning" role="alert">
         <h5 class="alert-heading">Oops</h5>
         <p>The visualization couldn't be loaded for the selected values. Not all possible combinations are supported by the backend library that powers the data behind this visualization.</p>
