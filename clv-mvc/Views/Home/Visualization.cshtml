@@ -10,7 +10,23 @@
 
     <script>
 
+        $(function () {
+            $('#log').change(function () {
+                if ($(this).prop('checked')) {
+                    graphtype = 'logarithmic';
+                }
+                loadchart(true);
+            })
+            $('#lin').change(function () {
+                if ($(this).prop('checked')) {
+                    graphtype = 'linear';
+                }
+                loadchart(true);
+            })
+        })
+
         document.getElementById("chart-container").onload = loadchart(true);
+        var graphtype = 'logarithmic';
 
         function loadchart(animate) {
             var info = {
@@ -46,7 +62,7 @@
                         },
                         yAxis: {
                             className: 'y-prop',
-                            type: 'logarithmic',
+                            type: graphtype,
                             title: {
                                 text: tit
                             }
@@ -86,6 +102,19 @@
     <div id="chart-container"></div>
 </div>
 <div class="col-lg-3 my-auto px-5 py-5 px-md-0 py-md-0 text-center">
+    <div class="col">
+        <label class="text-light" for="graphtoggle">Y Axis Scaling:</label>
+    </div>
+    <div class="col">
+        <div class="btn-group btn-group-toggle" data-toggle="buttons">
+            <label class="btn btn-secondary active">
+                <input type="radio" name="options" id="log" checked> Logarithmic
+            </label>
+            <label class="btn btn-secondary">
+                <input type="radio" name="options" id="lin"> Linear
+            </label>
+        </div>
+    </div>
     <div class="col">
         <label class="text-light" for="h">Hubble Parameter h:</label>
     </div>

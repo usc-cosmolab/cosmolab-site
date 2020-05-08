@@ -8,7 +8,6 @@ namespace InputFileGenerator
     {
         public static void ProcessAndGetOutput()
         {
-
             FileStream fs = new FileStream("a1.ini", FileMode.Open);
             using StreamReader reader = new StreamReader(fs);
             string text = reader.ReadToEnd();
@@ -38,7 +37,6 @@ namespace InputFileGenerator
         static void Main(string[] args)
         {
             ProcessAndGetOutput();
-            Console.WriteLine("Hello World!");
         }
     }
 }
