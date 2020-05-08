@@ -47,8 +47,9 @@
                         myChart.destroy();
                         $('#errormessage').removeAttr('hidden');
                         $('#errormessage').show();
-                        return;
+                        //return;
                     } else {
+                        console.log("not null");
                         $('#errormessage').hide();
                     }
 
@@ -103,7 +104,7 @@
                                 pointStart: 1
                             }
                         ]
-                    });
+                    }); console.log("set chart stuff");
                 }
             });
         };
