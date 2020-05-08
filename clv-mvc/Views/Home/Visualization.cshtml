@@ -27,11 +27,13 @@
 
         document.getElementById("chart-container").onload = loadchart(true);
         var graphtype = 'logarithmic';
+        var myChart;
 
         function loadchart(animate) {
             var info = {
                 h: document.getElementById("h").value,
-                ob: document.getElementById("ob").value
+                ocdm: document.getElementById("ocdm").value,
+                ok: document.getElementById("ok").value
             };
             jQuery.ajax({
                 type: "POST",
@@ -39,6 +41,16 @@
                 data: info,
                 dataType: "json", 
                 success: function (chData) {
+
+                    if (chData[0][0] == 69420) {
+                        console.log('hmm');
+                        chData = null;
+                        myChart.destroy();
+                        $('#errormessage').removeAttr('hidden');
+                        $('#errormessage').show();
+                    } else {
+                        $('#errormessage').hide();
+                    }
 
                     Highcharts.setOptions({
                         plotOptions: {
@@ -50,7 +62,7 @@
 
                     var tit = '\u2113(\u2113 + 1) /(2\uD835\uDF0B)C';
 
-                    var myChart = Highcharts.chart('chart-container', {
+                    myChart = Highcharts.chart('chart-container', {
                         chart: {
                             type: 'line'
                         },
@@ -100,6 +112,12 @@
 
 <div class="col">
     <div id="chart-container"></div>
+    <div id="errormessage" hidden class="alert alert-warning" role="alert">
+        <h5 class="alert-heading">Oops</h5>
+        <p>The visualization couldn't be loaded for the selected values. Not all possible combinations are supported by the backend library that powers the data behind this visualization.</p>
+        <hr>
+        <p class="mb-0">Try adjusting the parameters using the sliders.</p>
+    </div>
 </div>
 <div class="col-lg-3 my-auto px-5 py-5 px-md-0 py-md-0 text-center">
     <div class="col">
@@ -123,11 +141,17 @@
         <input type="range" id="h" name="h" min="0.3" max="1.5" step="0.2" value="0.6" onchange="updatehubble(value)">
     </div>
     <div class="col">
-        <label class="text-light" for="ob">Baryon Density Ω<sub>b</sub>:</label>
+        <label class="text-light" for="ocdm">Cold Dark Matter Density Ω<sub>cdm</sub>:</label>
     </div>
     <div class="col">
-        <label id="omegab-value" class="text-light" runat="server">0.021</label>
-        <input type="range" id="ob" name="ob" min="0.005" max="0.037" step="0.004" value="0.021" onchange="updatebaryon(value)">
+        <label id="omegacdm-value" class="text-light" runat="server">0.2</label>
+        <input type="range" id="ocdm" name="ocdm" min="0" max="1" step="0.2" value="0.2" onchange="updatecdm(value)">
     </div>
-
+    <div class="col">
+        <label class="text-light" for="ok">Curvature of the Universe Ω<sub>k</sub>:</label>
+    </div>
+    <div class="col">
+        <label id="omegak-value" class="text-light" runat="server">0</label>
+        <input type="range" id="ok" name="ok" min="-0.6" max="0.4" step="0.2" value="0" onchange="updatek(value)">
+    </div>
 </div>
