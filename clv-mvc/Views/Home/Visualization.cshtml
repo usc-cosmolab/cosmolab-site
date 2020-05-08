@@ -43,11 +43,11 @@
                 success: function (chData) {
 
                     if (chData[0][0] == 69420) {
-                        console.log('hmm');
                         chData = null;
                         myChart.destroy();
                         $('#errormessage').removeAttr('hidden');
                         $('#errormessage').show();
+                        return;
                     } else {
                         $('#errormessage').hide();
                     }
