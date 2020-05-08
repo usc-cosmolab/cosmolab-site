@@ -73,12 +73,12 @@ namespace clv_mvc.Controllers
         }
 
         [HttpPost]
-        public string NewChart(double h, double ob)
+        public string NewChart(double h, double ocdm, double ok)
         {
             List<Output> data = new List<Output>();
 
 
-            data = Parser.Program.ProcessAndGetOutput(h, ob);
+            data = Parser.Program.ProcessAndGetOutput(h, ocdm, ok);
 
             List<List<double>> l = new List<List<double>>();
             List<double> TT, EE, TE;
