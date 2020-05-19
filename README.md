@@ -11,7 +11,6 @@ The documentation below will show you how to dig right in to making changes to t
   - [Modifying webpages](#modifying-webpages)
   - [Adding images and other non-text content](#adding-images-and-other-non-text-content)
   - [Modifying the layout](#modifying-the-layout)
-    - [Changing the icons](#changing-the-icons)
   - [Changing colors and styles](#changing-colors-and-styles)
   - [Using the Bootstrap framework](#using-the-bootstrap-framework)
 
@@ -75,5 +74,9 @@ There are two main Bootstrap concepts that will help you write and edit HTML cod
  - Layout: This is more tricky. In essence, Bootstrap functions with a system of invisible rows and columns in which it divides a webpage.
      - Columns: Each page is divided into 12 columns. Say you want text occupying 3/4ths of the width of a page and a picture in the 1/4th on the right. You do this by making two columns, one occupying the space of 9 columns, and the other occupying 3 columns. So, you have two `<div>` elements, one of whose class is set to `col-9` and the other to `col-3` for a total of 12. Not incidentally, this is exactly the setup you see in *Research.cshtml* (as well as other files). In real world usage, it's a little different. The second div is set to `col-3` (ignore the `lg`). The first one is set to simply `col` which gives it the rest of the pie (i.e. 12-3=9).
      - Rows: Likewise, you can define rows. These rows are unlimited and don't add up to anything as webpages typically allow unlimited vertical space (as vertical scrolling is more natural than horizontal). Bootstrap will attempt to keep everything in a row together. On small screens, content may be wrapped around to a new line. You can find an example of row usage in *_Layout.cshtml*. Each item in the left pane is one row.
+
+# Setting up a full dev environment
+If text editing isn't working out for you and you want to make more serious changes to the project, you need to set up a dev environment in which you can play around and test changes **locally** before you push to GitHub. To do so, you will need Visual Studio (runs on Windows and macOS). The Community edition is available for free [here](https://visualstudio.microsoft.com/downloads/). Make sure that you select the "Web development" workload while installing and make sure that *.NET Core 3.1* is selected for installation.
+Once this is done, you can open *CosmoLabVisualization.sln* from your local repository from within Visual Studio.
 
 **More documentation is coming soon.**
