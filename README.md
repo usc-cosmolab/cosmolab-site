@@ -11,6 +11,7 @@ The documentation below will show you how to dig right in to making changes to t
   - [Modifying webpages](#modifying-webpages)
   - [Adding images and other non-text content](#adding-images-and-other-non-text-content)
   - [Modifying the layout](#modifying-the-layout)
+    - [Changing the icons](#changing-the-icons)
   - [Changing colors and styles](#changing-colors-and-styles)
   - [Using the Bootstrap framework](#using-the-bootstrap-framework)
 
@@ -35,6 +36,14 @@ In this line, `src="~/placeholder.png"` defines the path to the *source* of the 
 We have only one file containing the main layout of the site. This way, we do not have to modify the sidebar entries in every single html file when we make a change. Less work (for you), more convolution, great tradeoff!
 Find the *_Layout.cshtml* file in [clv-mvc/Views/Shared](https://github.com/usc-cosmolab/cosmolab-site/tree/master/clv-mvc/Views/Shared). Here you'll find everything but the main content of each page. A bunch of `<div>` elements (**div**isions) with the class `nav-item` are the containers for the sidebar elements.
 You can delete entire nav-items or modify their contents. The `asp-action="Example"` attribute defines what the link points to, while the text "Home" that's contained within the `div` with the attribute `name="hamburger_names"` is the text that appears. You can change this text without affecting the link.
+### Changing the icons
+This project uses the free and open source Feather icon library for the wireframe icons in the navigation menu. You can find the following example in _Layout.cshtml:
+
+    <span  data-feather="home"></span>
+The text in the data-feather attribute is responsible for loading the appropriate icon. You can select the icon simply using its name from the [Feather website](https://feathericons.com/). Search for an icon you like and simply replace `"home"` with its title instead.
+
+> **Note:** These icons are "included" in the project by means of a reference to
+> the JavaScript file `feather.js` in *_Layout.cshtml*.
 
 ## Changing colors and styles
 
