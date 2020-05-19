@@ -13,6 +13,7 @@ The documentation below will show you how to dig right in to making changes to t
   - [Modifying the layout](#modifying-the-layout)
   - [Changing colors and styles](#changing-colors-and-styles)
   - [Using the Bootstrap framework](#using-the-bootstrap-framework)
+- [Setting up a full dev environment](#setting-up-a-full-dev-environment)
 
 # Making changes
 
