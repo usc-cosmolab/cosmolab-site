@@ -14,6 +14,9 @@ namespace clv_mvc
 {
     public class Startup
     {
+
+        static readonly bool isDevelopment = Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT") == "Development";
+
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
@@ -24,11 +27,15 @@ namespace clv_mvc
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddHttpsRedirection(options =>
+            if (!isDevelopment)
             {
-                options.RedirectStatusCode = StatusCodes.Status308PermanentRedirect;
-                options.HttpsPort = 443;
-            });
+                services.AddHttpsRedirection(options =>
+                {
+                    options.RedirectStatusCode = StatusCodes.Status308PermanentRedirect;
+                    options.HttpsPort = 443;
+                });
+            }
+            
             services.AddControllersWithViews();
         }
 
@@ -36,13 +43,13 @@ namespace clv_mvc
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
             
-            app.UseHttpsRedirection();
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
             }
             else
             {
+                app.UseHttpsRedirection();
                 app.UseExceptionHandler("/Home/Error");
                 // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
                 app.UseHsts();

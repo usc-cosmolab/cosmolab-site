@@ -16,6 +16,8 @@ namespace clv_mvc
 {
     public class Program
     {
+        static readonly bool isDevelopment = Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT") == "Development";
+
         public static void Main(string[] args)
         {
             var host = new WebHostBuilder()
@@ -28,14 +30,19 @@ namespace clv_mvc
                 })
                 .UseKestrel(options =>
                 {
-                    options.ListenAnyIP(80, listenoptions =>
+                    if(!isDevelopment)
                     {
-                    });
-                    options.ListenAnyIP(443, listenOptions =>
-                    {
-                        var serverCertificate = LoadCertificate();
-                        listenOptions.UseHttps(serverCertificate); // <- Configures SSL
-                    });
+                        options.ListenAnyIP(80, listenoptions =>
+                        {
+                        });
+                        options.ListenAnyIP(443, listenOptions =>
+                        {
+                            var serverCertificate = LoadCertificate();
+                            listenOptions.UseHttps(serverCertificate); // <- Configures SSL
+
+                        });
+                    }
+                    
                 })
                 .UseContentRoot(Directory.GetCurrentDirectory())
                 .UseIISIntegration()
