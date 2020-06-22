@@ -1,16 +1,19 @@
 ﻿
 @{
-    ViewData["Title"] = "Visualization";
+    ViewData["Title"] = "Resources for Cosmologists";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
+
 @section Scripts
 {
-    
 
-    <script>
-
-        $(function () {
+    <div class="col">
+        <p class="text-light float-left">
+            Cosmology is cool.
+        </p>
+    </div>
+    <script>$(function () {
             $('#log').change(function () {
                 if ($(this).prop('checked')) {
                     graphtype = 'logarithmic';
@@ -39,7 +42,7 @@
                 type: "POST",
                 url: "/Home/NewChart",
                 data: info,
-                dataType: "json", 
+                dataType: "json",
                 success: function (chData) {
                     console.log("success");
                     if (chData[0][0] == 69420) {
@@ -107,20 +110,19 @@
                     }); console.log("set chart stuff");
                 }
             });
-        };
-    </script>
+        };</script>
 }
 
 <div class="col flex">
     <div id="chart-container"></div>
     <div class="row">
         <div class="col">
-            <label class="text-light">The CLASS Project powers the data behind this visualization. Check out the original paper and code.</label>
+            <label class="text-light">This visualization runs Boltzmann code <a href="https://github.com/lesgourg/class_public"> CLASS</a> created by Julien Lesgourges.</label>
         </div>
-        <div class="flex-column align-middle">
+        <!--<div class="flex-column align-middle">
             <button type="button" class="btn btn-dark mt-2" onclick="window.open('https://arxiv.org/abs/1104.2933')"><span data-feather="book"></span></button>
             <button type="button" class="btn btn-dark mt-2" onclick="window.open('https://github.com/lesgourg/class_public')"><span data-feather="github"></span></button>
-        </div>
+        </div>-->
     </div>
     <div class="row">
         <div class="col">
@@ -132,7 +134,7 @@
     </div>
     <div id="errormessage" style="display: none;" class="alert alert-warning" role="alert">
         <h5 class="alert-heading">Oops</h5>
-        <p>The visualization couldn't be loaded for the selected values. Not all possible combinations are supported by the backend library that powers the data behind this visualization.</p>
+        <p>The visualization couldn't be loaded for the selected values. Not all possible combinations are supported by the backend library that powers this visualization.</p>
         <hr>
         <p class="mb-0">Try adjusting the parameters using the sliders.</p>
     </div>
